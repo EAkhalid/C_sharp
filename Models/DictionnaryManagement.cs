@@ -9,21 +9,21 @@ namespace Models
     public class DictionnaryManagement <T>
     {
         public T Value { get; set; }
-        private Dictionary<string, T> myDictionnaire;
+        private IDictionary<string, T> myDictionary;
         public DictionnaryManagement()
         {
-            this.myDictionnaire = new Dictionary<string, T>();
+            this.myDictionary = new Dictionary<string, T>();
         }
         public DictionnaryManagement(T value)
         {
             this.Value = value;
-            this.myDictionnaire = new Dictionary<string, T>();
+            this.myDictionary = new Dictionary<string, T>();
         }
         public int AddPerson(string key ) {
             int tmp = 0;
-            if (!myDictionnaire.ContainsKey(key))
+            if (!myDictionary.ContainsKey(key))
             {
-                myDictionnaire.Add(key,Value);
+                myDictionary.Add(key,Value);
                 tmp = 1;
             }
             return tmp;
@@ -31,9 +31,9 @@ namespace Models
         public int RemovePerson(string key)
         {
             int tmp = 0;
-            if (myDictionnaire.ContainsKey(key))
+            if (myDictionary.ContainsKey(key))
             {
-                myDictionnaire.Remove(key);
+                myDictionary.Remove(key);
                 tmp = 1;
             }
             return tmp;
@@ -41,9 +41,9 @@ namespace Models
         public T FindPerson(string key)
         {
             
-            if (myDictionnaire.ContainsKey(key))
+            if (myDictionary.ContainsKey(key))
             {
-                return myDictionnaire[key];
+                return myDictionary[key];
             }
             else
             {
@@ -55,7 +55,7 @@ namespace Models
 
         public int NbrPersonne()
         {
-            return this.myDictionnaire.Count();
+            return this.myDictionary.Count();
         }
     }
 }
