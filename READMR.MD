@@ -22,6 +22,5 @@ The application uses reflection and custom attributes to generate a Windows form
 ## Credits
 This project was developed by Khalid El Azhar. You can find the original article here.
 http://bit.ly/3YE3sld
-
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
